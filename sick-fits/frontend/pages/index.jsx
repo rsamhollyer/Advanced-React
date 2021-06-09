@@ -1,9 +1,5 @@
 function IndexPage() {
-  return (
-    <div>
-      <p>Hi React</p>
-    </div>
-  );
+  return <p>Hi React</p>;
 }
 
 export default IndexPage;
