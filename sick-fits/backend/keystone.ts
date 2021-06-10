@@ -7,7 +7,7 @@ import {
 } from '@keystone-next/keystone/session';
 import { User } from './schemas/User';
 import { Product } from './schemas/Product';
-
+import { ProductImage } from './schemas/ProductImage';
 /* ********************************************************* */
 const databaseURL =
   process.env.DATABASE_URL ||
@@ -45,6 +45,7 @@ export default withAuth(
       // TODO : Schemea items go here
       User,
       Product,
+      ProductImage,
     }),
     ui: {
       // Show UI only for people who pass this test
