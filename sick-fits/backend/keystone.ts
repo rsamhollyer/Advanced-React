@@ -1,4 +1,4 @@
-import 'dotenv/config';
+/* eslint-disable import/no-unresolved */
 import { config, createSchema } from '@keystone-next/keystone/schema';
 import { createAuth } from '@keystone-next/auth';
 import {
@@ -9,6 +9,7 @@ import { User } from './schemas/User';
 import { Product } from './schemas/Product';
 import { ProductImage } from './schemas/ProductImage';
 /* ********************************************************* */
+
 const databaseURL =
   process.env.DATABASE_URL ||
   `mongodb:://localhost/keystone-sick-fits-tutorial`;
