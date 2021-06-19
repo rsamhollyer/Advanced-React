@@ -42,7 +42,7 @@ html{
   box-sizing:border-box;
   padding:0;
   margin: 0;
-  font-size:1.5rem;
+  font-size:62.5%;
   line-height:2;
 }
 
