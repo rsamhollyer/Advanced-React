@@ -13,7 +13,7 @@ export default function useForm(initialState = {}) {
     }
 
     if (type === 'file') {
-      value[0] = e.target.files;
+      [value] = e.target.files;
     }
 
     setInputs({
@@ -29,6 +29,7 @@ export default function useForm(initialState = {}) {
 
   function clearForm() {
     const blankState = Object.fromEntries(
+      // eslint-disable-next-line no-unused-vars
       Object.entries(inputs).map(([key, value]) => [key, ''])
     );
     setInputs(blankState);
