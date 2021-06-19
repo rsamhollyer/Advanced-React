@@ -5,7 +5,7 @@ import Router from 'next/router';
 import NProgress from 'nprogress';
 import Page from '../components/Page';
 import '../components/styles/nprogress.css';
-import withApollo from '../lib/withData';
+import withData from '../lib/withData';
 /* ---------------------------------------------------- */
 
 Router.events.on('routeChangeStart', () => {
@@ -37,4 +37,4 @@ MyApp.getInitialProps = async function ({ Component, ctx }) {
   pageProps.query = ctx.query;
   return { pageProps };
 };
-export default withApollo(MyApp);
+export default withData(MyApp);
