@@ -17,7 +17,16 @@ function Product({ product }) {
       </Title>
       <PriceTag>{formatMoney(product.price)}</PriceTag>
       <p>{product.description}</p>
-      {/* TODO : Add buttonts to edit and delete items */}
+      <div className="buttonlist">
+        <Link
+          href={{
+            pathname: `update`,
+            query: { productid: product.id },
+          }}
+        >
+          Edit ✏️
+        </Link>
+      </div>
     </ItemStyles>
   );
 }
