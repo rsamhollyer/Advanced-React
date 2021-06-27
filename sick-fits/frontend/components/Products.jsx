@@ -29,15 +29,8 @@ export default function Products({ page }) {
       first: perPage,
     },
   });
-
-  if (loading) {
-    return <p>Loading...</p>;
-  }
-
-  if (error) {
-    return <p>Error :{error.message}</p>;
-  }
-
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
   return (
     <div>
       <ProductsListStyles>
@@ -52,5 +45,5 @@ export default function Products({ page }) {
 const ProductsListStyles = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  grid-gap: 60px;
 `;
