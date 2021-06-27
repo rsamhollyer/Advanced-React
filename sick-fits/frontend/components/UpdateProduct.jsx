@@ -51,7 +51,7 @@ export default function UpdateProduct({ id }) {
     <Form
       onSubmit={async e => {
         e.preventDefault();
-        const response = await updateProduct({
+        await updateProduct({
           variables: {
             id,
             name: inputs.name,
