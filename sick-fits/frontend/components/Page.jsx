@@ -16,12 +16,11 @@ export default Page;
 
 const GlobalStyles = createGlobalStyle`
 @font-face {
-font-family: 'radnika_next';
-src:url("/.static/radnikanext-medium-webfont.woff2")
-  format('woff2');
-  font-weight:normal;
-  font-style:normal
-}
+    font-family: 'radnika_next';
+    src: url('/static/radnikanext-medium-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
 :root{
   --red:#ff0000;
   --black:#393939;
