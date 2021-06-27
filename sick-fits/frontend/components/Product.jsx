@@ -21,7 +21,7 @@ function Product({ product }) {
       <div className="buttonlist">
         <Link
           href={{
-            pathname: `update`,
+            pathname: `/update`,
             query: { productid: product.id },
           }}
         >
