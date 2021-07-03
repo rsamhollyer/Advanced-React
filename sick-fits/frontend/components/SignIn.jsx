@@ -29,7 +29,7 @@ export default function SignIn() {
     password: '',
   });
 
-  const [signin, { data, loading }] = useMutation(SIGNUP_MUTATION, {
+  const [signin, { data }] = useMutation(SIGNUP_MUTATION, {
     variables: inputs,
     refetchQueries: [{ query: CURRENT_USER_QUERY }],
   });
