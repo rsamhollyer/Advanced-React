@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useQuery } from '@apollo/client';
 import gql from 'graphql-tag';
 import styled from 'styled-components';
