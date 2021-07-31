@@ -1,16 +1,18 @@
 /* eslint-disable import/no-unresolved */
-import { config, createSchema } from '@keystone-next/keystone/schema';
 import { createAuth } from '@keystone-next/auth';
+import { config, createSchema } from '@keystone-next/keystone/schema';
 import {
-  withItemData,
   statelessSessions,
+  // eslint-disable-next-line prettier/prettier
+  withItemData
 } from '@keystone-next/keystone/session';
+import { sendPasswordResetEmail } from './lib/mail';
+import { extendGraphqlSchema } from './mutations/index';
 import { CartItem } from './schemas/CartItem';
-import { User } from './schemas/User';
 import { Product } from './schemas/Product';
 import { ProductImage } from './schemas/ProductImage';
+import { User } from './schemas/User';
 import { insertSeedData } from './seed-data';
-import { sendPasswordResetEmail } from './lib/mail';
 /* ********************************************************* */
 
 const databaseURL =
@@ -63,6 +65,7 @@ export default withAuth(
       ProductImage,
       CartItem,
     }),
+    extendGraphqlSchema,
     ui: {
       // Show UI only for people who pass this test
       isAccessAllowed: ({ session }) => !!session?.data,
