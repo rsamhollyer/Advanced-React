@@ -1,10 +1,11 @@
 /* eslint-disable react/prop-types */
 import Link from 'next/link';
-import ItemStyles from './styles/ItemStyles.js';
-import Title from './styles/Title';
-import PriceTag from './styles/PriceTag';
 import formatMoney from '../lib/formatMoney.js';
+import AddToCart from './AddToCart.jsx';
 import DeleteProduct from './DeleteProduct.jsx';
+import ItemStyles from './styles/ItemStyles.js';
+import PriceTag from './styles/PriceTag';
+import Title from './styles/Title';
 
 function Product({ product }) {
   return (
@@ -27,6 +28,7 @@ function Product({ product }) {
         >
           Edit ✏️
         </Link>
+        <AddToCart id={product.id} />
         <DeleteProduct id={product.id}>Delete ❌</DeleteProduct>
       </div>
     </ItemStyles>
