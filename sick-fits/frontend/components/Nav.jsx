@@ -1,10 +1,12 @@
 import Link from 'next/link';
+import { useCart } from '../lib/hooks/cartState';
 import SignOut from './SignOut';
 import NavStyles from './styles/NavStyles';
 import { useUser } from './User';
 
 function Nav() {
   const user = useUser();
+  const { openCart } = useCart();
   return (
     <NavStyles>
       <Link href="/products">Products</Link>
@@ -14,6 +16,9 @@ function Nav() {
           <Link href="/orders">Orders</Link>
           <Link href="/account">Account</Link>
           <SignOut />
+          <button type="button" onClick={openCart}>
+            My Cart
+          </button>
         </>
       )}
       {!user && (
