@@ -11,9 +11,17 @@ const REMOVE_FROM_CART_MUTATION = gql`
   }
 `;
 
+function update(cache, payload) {
+  cache.evict(cache.identify(payload.data.deleteCartItem));
+}
+
 export default function RemoveFromCart({ id }) {
   const [removeFromCart, { loading }] = useMutation(REMOVE_FROM_CART_MUTATION, {
     variables: { id },
+    update,
+    // optimisticResponse: { THERE IS AN ERROR AND THE OPTIMISTIC RESPONSE DOES NOT WORK RIGHT.
+    //   deleteCartItem: { __typename: 'CartItem', id },
+    // },
   });
 
   return (
@@ -34,7 +42,7 @@ const BigButton = styled.button`
   border: 0;
 
   &:hover {
-    color: red;
+    color: var(--red);
     cursor: pointer;
   }
 `;
